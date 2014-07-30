@@ -1,0 +1,32 @@
+{
+  "bitwise"       : true,
+  "camelcase"     : true,
+  "curly"         : true,
+  "eqeqeq"        : true,
+  "es3"           : false,
+  "forin"         : false,
+  "immed"         : true,
+  "indent"        : 4,
+  "latedef"       : true,
+  "newcap"        : true,
+  "noarg"         : true,
+  "noempty"       : true,
+  "nonew"         : true,
+  "quotmark"      : "single",
+  "undef"         : true,
+  "unused"        : true,
+  "strict"        : false,
+  "trailing"      : true,
+  "maxparams"     : 5,
+  "maxdepth"      : 3,
+  "maxstatements" : false,
+  "multistr"      : true,
+  "expr"          : true,
+
+  "jquery"        : true,
+  "browser"       : true,
+
+    "globals": {
+        "Q" : false
+    }
+}
