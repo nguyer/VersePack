@@ -1,19 +1,27 @@
 
 function getCard(cardNumber, translation) {
 	var deferred = Q.defer();
-	$.getJSON( 'json/' + translation + '/' + cardNumber + '.json', function(data) {
-		var card = '<div class="card" id="' + cardNumber + '">\
-			<div class="content">\
-				<div class="translation">' + data.version + '</div>\
-				<div class="topic">' + data.topic + '</div>\
-				<div class="reference">' + data.reference + '</div>\
-				<div>' + data.verse + '</div>\
-				<div class="bottomReference">' + data.reference + '</div>\
-				<div class="seriesNumber">'+ data.seriesLetter + '-'  + data.verseNumber + '</div>\
-				<div class="seriesTitle">' + data.seriesTitle + '</div>\
-			</div>\
-		</div>';
-		deferred.resolve($(card));
+
+	$.ajax('./json/' + translation + '/' + cardNumber + '.json', {
+		dataType  : 'json',
+		isLocal   : true,
+		success   : function (data) {
+			var card = '<div class="card" id="' + cardNumber + '">\
+				<div class="content">\
+					<div class="translation">' + data.version + '</div>\
+					<div class="topic">' + data.topic + '</div>\
+					<div class="reference">' + data.reference + '</div>\
+					<div>' + data.verse + '</div>\
+					<div class="bottomReference">' + data.reference + '</div>\
+					<div class="seriesNumber">'+ data.seriesLetter + '-'  + data.verseNumber + '</div>\
+					<div class="seriesTitle">' + data.seriesTitle + '</div>\
+				</div>\
+			</div>';
+			deferred.resolve($(card));
+		},
+			error : function () {
+				window.alert("Error loading JSON. You're probably using a browser that doesn't support loading local files.");
+			}
 	});
 	return deferred.promise;
 }
@@ -42,6 +50,40 @@ $(document).ready(function() {
 	var currentTranslation = 'esv';
 	var currentCardIndex = Number(localStorage.getItem('currentCardIndex')) || 0;
 
+	var tutorialPassed = JSON.parse(localStorage.getItem('tutorialPassed')) || false;
+
+	if (!tutorialPassed) {
+		$('body').append('<div class="tutorial"></div>');
+		$('.tutorial').load('tutorial.html .step1', function(){
+			$('.step1 > .nextButton').click(function() {
+				$('.tutorial').load('tutorial.html .step2');
+
+				$('.cardStack').on('swipeleft', function() {
+					step3();
+				}).on('swiperight', function() {
+					step3();
+				});
+
+				function step3() {
+					$('.tutorial').load('tutorial.html .step3', function() {
+						$('.cardStack').on('swipeup', function() {
+							$('.tutorial').load('tutorial.html .step4', function() {
+								$('.wrap').click(function() {
+									$('.tutorial').load('tutorial.html .step5', function() {
+										$('.step5 > .nextButton').click(function() {
+											$('.tutorial').remove();
+											localStorage.setItem('tutorialPassed', true);
+										});
+									});
+								});
+							}).css('bottom', '').css('top', '');
+						});
+					}).css('bottom', 'initial').css('top', 0);
+				}
+			});
+		});
+	}
+
 	function setActiveCard(cardIndex) {
 		var previousIndex = (cardIndex - 1 + currentCardStack.length) % currentCardStack.length;
 		var nextIndex = (cardIndex + 1 + currentCardStack.length) % currentCardStack.length;
@@ -57,11 +99,13 @@ $(document).ready(function() {
 		}
 	}
 
-	Q.all(currentCardStack.map(function(value, index) {
-		return getCard(currentCardStack[index], currentTranslation).then(function(card) {
-			$('.cardStack').append(card);
+	currentCardStack.reduce(function(previous, index) {
+		return previous.then(function() {
+			return getCard(index, currentTranslation).then(function(card) {
+				$('.cardStack').append(card);
+			});
 		});
-	})).then(function() {
+	}, Q.resolve()).then(function() {
 
 		setActiveCard(currentCardIndex);
 

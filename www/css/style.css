@@ -25,6 +25,7 @@ html, body {
 body {
 	font-family: 'Roboto Slab';
 	font-size: 1.25em;
+	-ms-touch-action: none;
 }
 
 .wrap {
@@ -159,6 +160,10 @@ body {
 	-webkit-appearance: none;
 }
 
+.menu select::-ms-expand {
+	display: none;
+}
+
 .top {
 	position: absolute;
 	width: 100%;
@@ -196,4 +201,50 @@ body {
 	text-align: center;
 	width: 25px;
 	height: 25px;
+}
+
+.tutorial {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.90);
+	color: #fff;
+	z-index: 100;
+}
+
+.tutorial div {
+	padding: 1em;
+}
+
+.tutorial h1 {
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.tutorial .nextButton {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding: 5px;
+	border: 1px solid #fff;
+	cursor: pointer;
+}
+
+.tutorial .nextButton:hover {
+	background-color: rgba(255,255,255,0.10);
+}
+
+.tutorial .nextButton:active {
+	background-color: rgba(255,255,255,0.05);
+}
+
+.tutorial .step2 {
+	background:
+		url(../img/left-arrow.svg) left center no-repeat,
+		url(../img/right-arrow.svg) right center no-repeat;
+}
+
+.tutorial .step2 p {
+	margin-left: 50px;
+	margin-right: 50px;
 }
