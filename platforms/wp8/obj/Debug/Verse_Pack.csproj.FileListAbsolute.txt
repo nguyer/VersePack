@@ -1,0 +1,14 @@
+c:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\ApplicationIcon.png
+c:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\Background.png
+c:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\org.navigators.tms.dll
+c:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\org.navigators.tms.pdb
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\AppManifest.xaml
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Debug\CordovaAppProj_Debug_AnyCPU.xap
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\App.g.cs
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\cordovalib\CordovaView.g.cs
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\MainPage.g.cs
+c:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\org.navigators.tms.g.resources
+c:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\org.navigators.tms.dll
+c:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\org.navigators.tms.pdb
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Debug\XapCacheFile.xml

@@ -1,0 +1,14 @@
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\ApplicationIcon.png
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\Background.png
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\org.navigators.tms.dll
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\org.navigators.tms.pdb
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\AppManifest.xaml
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\Properties\WMAppManifest.xml
+C:\Users\Nicko\Code\VersePack\platforms\wp8\Bin\Release\VersePack_Release_AnyCPU.xap
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\App.g.cs
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\cordovalib\CordovaView.g.cs
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\MainPage.g.cs
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\org.navigators.tms.g.resources
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\org.navigators.tms.dll
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\org.navigators.tms.pdb
+C:\Users\Nicko\Code\VersePack\platforms\wp8\obj\Release\XapCacheFile.xml
